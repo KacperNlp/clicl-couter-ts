@@ -13,12 +13,8 @@ const App = () => {
 
     switch(type) {
       case 'add':
+      case 'subtract':
           newCounter = counter + value;
-          setCounter(newCounter);
-      break;
-
-      case 'odd':
-          newCounter = counter - value;
           setCounter(newCounter);
       break;
 
@@ -35,6 +31,8 @@ const App = () => {
     <div className="App">
       <div className="buttons-container">
         <Button text={'+10'} value={10} type={'add'} onClick={onClick} />
+        <Button text={'Restart'} value={0} type={'restart'} onClick={onClick} />
+        <Button text={'-10'} value={-10} type={'subtract'} onClick={onClick} />
       </div>
       <div className="counter-container">
         <CounterResult text="All click:" result={allClick}/>
